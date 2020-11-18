@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <a class="navbar-brand text-white" href="#">Jamshed</a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link text-white" [routerLink]="['/login']" routerLinkActive="router-link-active" *ngIf="!isAuthenticated">Authenticat</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" *ngIf="isAuthenticated">Recipies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" *ngIf="!isAuthenticated" [routerLink]="['/shopping-list']" routerLinkActive="router-link-active">Shopping List</a>
+            </li>
+        </ul>
+    </div>
+    <div style="float: right; color: white !important;">
+        <ul class="navbar-nav ">
+            <li class="nav-item">
+                <a class="nav-link text-white" href="#" *ngIf="isAuthenticated">Logout</a>
+            </li>
+            <li class="nav-item dropdown" *ngIf="isAuthenticated">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Manage
+            </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Fetch Data</a>
+                    <a class="dropdown-item" href="#">Save Data</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
